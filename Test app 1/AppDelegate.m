@@ -17,6 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Override point for customization after application launch.
+    
+//    [self createEditableCopyOfDatabaseIfNeeded];
+    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    
+    [self.window  addSubview:self.loginViewController.view];
+    self.window.rootViewController=self.loginViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
